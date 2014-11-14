@@ -13,6 +13,18 @@ loader.addEventListener(Event.COMPLETE, function(e:Event):void{
 })
 </code></pre>
 
+# Usage to get the data as a dictionary:
+
+<pre><code>
+var loader:URLLoader = new URLLoader(new URLRequest("test.yaml"));
+loader.addEventListener(Event.COMPLETE, function(e:Event):void{
+	
+	var o:Dictionary = YAML.decodeAsDictionary(loader.data);
+	//And you're done
+	
+})
+</code></pre>
+
 # License 
 
 (The MIT License)
