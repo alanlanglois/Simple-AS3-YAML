@@ -20,6 +20,7 @@ package
 		{
 			trace("Load completed, parsing.");
 			var obj:Object = YAML.decode(e.target.data);
+			var dic:Dictionary = YAML.decodeAsDictionary( results );
 			
 			recursiveTraceProperties(obj);
 			
