@@ -26,7 +26,8 @@ package dupin.parsers.yaml
 		  ['space', /^\s+/],
 		  ['true', /^(enabled|true|yes|on)/],
 		  ['false', /^(disabled|false|no|off)/],
-		  ['string', /^["|'](.*?)["|']/], //' Duh, syntax highligthing
+		  ['string', /^"(.*?)"/],
+		  ['string', /^'(.*?)'/],
 		  ['multilineString', /^\|[^\n]*/],
 		  ['float', /^(\d+\.\d+)/],
 		  ['int', /^(\d+)/],
