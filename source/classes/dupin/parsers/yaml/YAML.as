@@ -62,6 +62,29 @@ package dupin.parsers.yaml
 			return new YAML(str).parse();
 		}
 		
+		public static function decodeAsDictionary(str:String):Dictionary
+		{
+			return _parse( new YAMLParser(str).parse());
+		}
+		
+		
+		private static function _parse( o:Object ):Dictionary
+		{
+			var dic:Dictionary = new Dictionary();
+			
+			for ( var i:String in o ) {
+				
+				if ( typeof(  o[i] ) == "object" ) {
+					dic[i] = _parse( o[i] );
+				}
+				else {
+					dic[i] = o[i];
+				}
+			}
+			
+			return dic;
+		}
+		
 		private function context(str:*):String {
 		  if (!(str is String)) return '';
 		  str = str
